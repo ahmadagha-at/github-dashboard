@@ -1,0 +1,137 @@
+/* Fullscreen Backdrop & Animated Background Grid */
+.login-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0b0c10;
+  background-image: 
+    linear-gradient(rgba(255, 107, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  animation: bgPulse 8s ease-in-out infinite alternate;
+}
+
+/* Ambient Radial Glow in the Center */
+.login-screen::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Card Container with Glassmorphism & Animations */
+.login-card {
+  position: relative;
+  background: rgba(18, 18, 20, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 107, 0, 0.25);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 107, 0, 0.1);
+  animation: cardFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Header Text Styles */
+.login-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.login-title span {
+  color: #ff6b00;
+  text-shadow: 0 0 12px rgba(255, 107, 0, 0.5);
+}
+
+.login-subtitle {
+  color: #9a9a9e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/* Orange GitHub OAuth Button */
+.github-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  background: linear-gradient(135deg, #ff6b00 0%, #e05300 100%);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.github-btn:hover {
+  background: linear-gradient(135deg, #ff7b1a 0%, #ff5500 100%);
+  box-shadow: 0 6px 25px rgba(255, 107, 0, 0.55);
+  transform: translateY(-2px);
+}
+
+.github-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(255, 107, 0, 0.3);
+}
+
+.token-input {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid rgba(255, 107, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.token-input:focus {
+  border-color: #ff6b00;
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.25);
+}
+
+/* Keyframe Animations */
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bgPulse {
+  0% {
+    background-size: 40px 40px;
+  }
+  100% {
+    background-size: 44px 44px;
+  }
+}
