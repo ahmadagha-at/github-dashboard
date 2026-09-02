@@ -1,0 +1,75 @@
+.repo-list-container {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.repo-list-container h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.repo-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.repo-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 107, 0, 0.4);
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.repo-title {
+  color: #ff6b00;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.repo-title:hover {
+  text-decoration: underline;
+}
+
+.repo-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.repo-description {
+  color: #a0a0a0;
+  font-size: 0.875rem;
+  margin: 0.75rem 0 1.25rem 0;
+  line-height: 1.4;
+}
+
+.repo-footer {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.repo-lang {
+  color: #e0e0e0;
+}
